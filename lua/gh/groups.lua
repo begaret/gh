@@ -1,0 +1,171 @@
+local colors = require('gh.colors')
+
+return {
+	Normal			= { fg = colors.white, bg = colors.black },
+	NormalNC		= { link = 'Normal' },
+	NonText			= { fg = colors.yellow },
+
+	Substitute		= { fg = colors.white, bg = colors.brown },
+	CurSearch		= { link = 'Substitute' },
+	IncSearch		= { link = 'Substitute' },
+	Search			= { link = 'Substitute' },
+
+	Cursor			= { fg = colors.black, bg = colors.white },
+	lCursor			= { link = 'Cursor' },
+	CursorIM		= { link = 'Cursor' },
+	CursorColumn	= { bg = colors.gray1 },
+	CursorLine		= { link = 'CursorColumn' },
+	TermCursor		= { fg = colors.black, bg = colors.white },
+	TermCursorNC	= { fg = colors.black, bg = colors.black },
+
+	Directory		= { fg = colors.blue },
+
+	DiffAdd			= { bg = colors.green },
+	DiffChange		= { bg = colors.cyan },
+	DiffDelete		= { bg = colors.red },
+	DiffText		= { bg = colors.blue },
+
+	EndOfBuffer		= { fg = colors.black, bg = colors.black },
+
+	WinSeparator	= { fg = colors.gray },
+	VertSplit		= { fg = colors.gray },
+
+	Folded			= {},
+	FoldColumn		= {},
+	SignColumn		= {},
+
+	LineNr			= { fg = colors.gray, bg = colors.black },
+	LineNrAbove		= { link = 'LineNr' },
+	LineNrBelow		= { link = 'LineNr' },
+
+	CursorLineNr	= { fg = colors.white, bg = colors.black },
+	CursorLineFold	= { link = 'FoldColumn' },
+	CursorLineSign	= { link = 'SignColumn' },
+
+	MatchParen		= { bg = colors.brown },
+
+	ModeMsg			= { fg = colors.yellow },
+	MoreMsg			= { fg = colors.yellow },
+	MsgArea			= {},
+	MsgSeparator	= {},
+
+	Question		= { fg = colors.yellow },
+	ErrorMsg		= { fg = colors.red },
+	WarningMsg		= { fg = colors.yellow },
+
+	NormalFloat		= { link = 'Normal' },
+	FloatBorder		= {},
+	FloatTitle		= {},
+
+	Visual			= { bg = colors.brown },
+	VisualNOS		= { link = 'Visual' },
+
+	Todo			= { fg = colors.black, bg = colors.yellow, bold = true },
+	Error			= { fg = colors.black, bg = colors.red, bold = true },
+
+	-- syntax
+	Comment 		= { fg = colors.gray, italic = true },
+
+	Constant		= { fg = colors.blue },
+	String			= { fg = colors.cyan },
+	Character		= { link = 'String' },
+	Number			= { link = 'Constant' },
+	Boolean			= { link = 'Constant' },
+	Float			= { link = 'Constant' },
+
+	Identifier		= { fg = colors.white },
+	Function		= { fg = colors.magenta },
+
+	Statement		= { fg = colors.red },
+	Conditional		= { link = 'Statement' },
+	Repeat			= { link = 'Statement' },
+	Label			= { link = 'Statement' },
+	Operator		= { fg = colors.white },
+	Keyword			= { link = 'Statement' },
+	Exception		= { link = 'Statement' },
+
+	PreProc			= { fg = colors.red },
+	Include			= { link = 'PreProc' },
+	Define			= { link = 'PreProc' },
+	Macro			= { link = 'PreProc' },
+	PreCondit		= { link = 'PreProc' },
+
+	Type			= { fg = colors.red },
+	StorageClass	= { link = 'Type' },
+	Structure		= { fg = colors.blue },
+	Typedef			= { link = 'Type' },
+
+	Special			= { fg = colors.blue },
+	SpecialComment	= { link = 'Comment' },
+	SpecialChar		= { link = 'Special' },
+	Delimiter		= { link = 'Operator' },
+
+	-- diagnostics
+	DiagnosticError	= { fg = colors.red },
+	DiagnosticWarn	= { fg = colors.yellow },
+	DiagnosticInfo	= { fg = colors.blue },
+	DiagnosticHint	= { fg = colors.magenta },
+	DiagnosticOk	= { fg = colors.green },
+
+	-- treesitter
+	['@text.literal']			= { link = 'Normal' },
+	['@text.todo']				= { link = 'Todo' },
+	['@comment']				= { link = 'Comment' },
+	['@punctuation']			= { link = 'Delimiter' },
+	['@constant']				= { link = 'Constant' },
+	['@constant.builtin']		= { link = 'Special' },
+	['@constant.macro']			= { link = 'Define' },
+	['@define']					= { link = 'Define' },
+	['@macro']					= { link = 'Macro' },
+	['@string']					= { link = 'String' },
+	['@string.escape']			= { link = 'SpecialChar' },
+	['@string.special']			= { link = 'SpecialChar' },
+	['@character']				= { link = 'Character' },
+	['@character.special']		= { link = 'SpecialChar' },
+	['@number']					= { link = 'Number' },
+	['@boolean']				= { link = 'Boolean' },
+	['@float']					= { link = 'Float' },
+	['@function']				= { link = 'Function' },
+	['@function.builtin']		= { link = 'Special' },
+	['@function.macro']			= { link = 'Macro' },
+	['@parameter']				= { link = 'Identifier' },
+	['@method']					= { link = 'Function' },
+	['@field']					= { link = 'Identifier' },
+	['@property']				= { link = 'Identifier' },
+	['@constructor']			= { link = 'Function' },
+	['@Conditional']			= { link = 'Conditional' },
+	['@repeat']					= { link = 'Repeat' },
+	['@label']					= { link = 'Label' },
+	['@operator']				= { link = 'Operator' },
+	['@keyword']				= { link = 'Keyword' },
+	['@exception']				= { link = 'Exception' },
+	['@variable']				= { link = 'Identifier' },
+	['@type']					= { link = 'Type' },
+	['@type.builtin']			= { link = 'StorageClass' },
+	['@type.definition']		= { link = 'Typedef' },
+	['@storageclass']			= { link = 'StorageClass' },
+	['@structure']				= { link = 'Structure' },
+	['@namespace']				= { link = 'Structure' },
+	['@include']				= { link = 'Include' },
+	['@preproc']				= { link = 'PreProc' },
+	['@debug']					= { link = 'Debug' },
+	['@tag']					= { link = 'Tag' },
+
+	['@lsp.type.class']			= { fg = colors.green },
+    ["@lsp.type.comment"]		= { link = "@comment" },
+    ["@lsp.type.decorator"]		= { link = "@macro" },
+    ["@lsp.type.enum"]			= { link = "@lsp.type.class" },
+    ["@lsp.type.enumMember"]	= { link = "@constant" },
+    ["@lsp.type.function"]		= { link = "@function" },
+    ["@lsp.type.interface"]		= { link = "@constructor" },
+    ["@lsp.type.macro"]			= { link = "@macro" },
+    ["@lsp.type.method"]	 	= { link = "@method" },
+    ["@lsp.type.namespace"] 	= { link = "@namespace" },
+    ["@lsp.type.parameter"] 	= { link = "@parameter" },
+    ["@lsp.type.property"] 		= { link = "@property" },
+    ["@lsp.type.struct"]		= { link = "@type" },
+    ["@lsp.type.type"]			= { link = "@type" },
+    ["@lsp.type.typeParameter"]	= { link = "@type.definition" },
+    ["@lsp.type.variable"]		= { link = "@variable" },
+}
+
