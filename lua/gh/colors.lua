@@ -1,8 +1,9 @@
 return {
 	black		=	'#0d1117',
 	blue		=	'#79c0ff',
-	green		=	'#84d8c3',
-	-- green		=	'#7ee787',
+	green		=	config.alt_green
+				and '#7ee787'
+				or  '#84d8c3',
 	cyan		=	'#a5d6ff',
 	red			=	'#ee736b',
 	magenta 	=	'#d2a8ff',
