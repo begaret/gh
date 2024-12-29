@@ -1,16 +1,9 @@
-local default = {
-	alt_green = false
-}
-
 return {
-	load = function(config)
+	load = function()
 		-- check if colorscheme already loaded
 		if vim.g.colors_name then
 			vim.cmd([[hi clear]])
 		end
-
-		-- check for config
-		config = config or default
 
 		-- set some variables
 		vim.g.colors_name = 'gh'
